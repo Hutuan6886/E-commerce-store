@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Category } from "@/types";
+import { CategoryType } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 //todo: Quản lý toàn bộ Navbar của store, (Navbar của store là Category của admin-dáhboard)
@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 interface MainNavProps {
-  dataRoutes: Category[]; // interface Category {id: string;name: string;billboard: BillBoard;}
+  dataRoutes: CategoryType[]; // interface Category {id: string;name: string;billboard: BillBoard;}
 }
 const MainNav: React.FC<MainNavProps> = ({ dataRoutes }) => {
   //todo: format dataRoutes

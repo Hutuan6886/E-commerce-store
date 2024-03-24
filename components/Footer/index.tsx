@@ -1,6 +1,6 @@
 "use client";
 
-const Footer = () => {
+const index = () => {
   return (
     <footer className="py-8">
       <p className="text-black text-xs text-center tracking-wider">
@@ -10,4 +10,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default index;

@@ -1,5 +1,4 @@
 import { ProductType } from "@/types";
-import { url } from "inspector";
 import queryString from "query-string";
 
 interface Query {
@@ -14,7 +13,7 @@ const URL = `${process.env.ADMIN_DASHBOARD_API_URL}/products`;
 
 const fetchProducts = async (query: Query): Promise<ProductType[]> => {
   const url = await queryString.stringifyUrl({
-    //todo: Sử dụng query-string libary để tạo ra 1 url cấu tạo từ các properties của product
+    //todo: Sử dụng query-string libary để tạo ra 1 url cấu tạo từ các properties của product, để get data theo đúng props yêu cầu. Ví dụ, chỉ muốn get data có chung thuộc tính categoryId, hoặc sizeId hoặc ....
     url: URL,
     query: {
       categoryId: query.categoryId,
@@ -24,10 +23,13 @@ const fetchProducts = async (query: Query): Promise<ProductType[]> => {
       isArchived: query.isArchived,
     },
   });
-  const res = await fetch(URL, {
+  
+  // console.log("url", url);
+  const res = await fetch(url, {
     method: "GET",
     cache: "no-cache",
   });
+
   return res.json();
 };
 

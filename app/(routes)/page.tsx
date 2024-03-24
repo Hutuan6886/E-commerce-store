@@ -2,6 +2,7 @@ import fetchBillboards from "@/actions/fetchBillboards";
 import fetchProducts from "@/actions/fetchProducts";
 import Billboard from "@/components/Billboard/Billboard";
 import Product from "@/components/Product/Product";
+import Container from "@/components/ui/Container";
 import { BillBoardType, ProductType } from "@/types";
 import React from "react";
 
@@ -11,15 +12,17 @@ const HomePage = async () => {
   );
 
   const dataProduct: ProductType[] = await fetchProducts({
-    categoryId: "1",
+    //todo: Get những data mang thuộc tính isFeatured:true và isArrchived:false
     isFeatured: true,
     isArchived: false,
   });
 
   return (
     <div>
-      <Billboard dataBillboard={dataBillboard} />
-      <Product title="Sản phẩm nổi bật" products={dataProduct} />
+      <Container>
+        <Billboard dataBillboard={dataBillboard} />
+        <Product title="Sản phẩm nổi bật" products={dataProduct} />
+      </Container>
     </div>
   );
 };

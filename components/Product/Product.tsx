@@ -11,9 +11,9 @@ interface ProductProps {
 const Product: React.FC<ProductProps> = ({ title, products }) => {
   return (
     <div className="w-[90%] m-auto">
-      <h3 className="font-bold text-3xl my-3">{title}</h3>
-      <div className="grid grid-cols-5 gap-3">
-        {products.length === 0 && <Empty />}
+      <h3 className="font-bold text-xl my-2 lg:text-3xl lg:my-3">{title}</h3>
+      {products.length === 0 && <Empty />}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
         {products.map((product) => {
           return (
             <div key={product.id}>
