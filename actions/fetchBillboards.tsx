@@ -1,8 +1,8 @@
-import { BillBoard } from "@/types";
+import { BillBoardType } from "@/types";
 
-const fetchBillboards = async (id: string): Promise<BillBoard> => {
+const fetchBillboards = async (id: string): Promise<BillBoardType> => {
   const res = await fetch(
-    `${process.env.ADMIN_DASHBOARD_API_URL}/billboards/${id}`,
+    `${process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_API_URL}/billboards/${id}`,
     {
       method: "GET",
       cache: "no-cache",

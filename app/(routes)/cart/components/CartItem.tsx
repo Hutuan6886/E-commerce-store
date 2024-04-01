@@ -15,7 +15,7 @@ const CartItem: React.FC<CartItemProps> = ({ product }) => {
   return (
     <li className="relative grid grid-cols-12 gap-4 shadow-md p-3 my-4 rounded-xl">
       <div
-        className="absolute top-1 right-1 cursor-pointer "
+        className="absolute top-1 right-1 cursor-pointer"
         onClick={() => {
           storeCart.removeProduct(product.id);
         }}

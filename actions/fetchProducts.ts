@@ -9,7 +9,7 @@ interface Query {
   isArchived?: boolean;
 }
 
-const URL = `${process.env.ADMIN_DASHBOARD_API_URL}/products`;
+const URL = `${process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_API_URL}/products`;
 
 const fetchProducts = async (query: Query): Promise<ProductType[]> => {
   const url = await queryString.stringifyUrl({
