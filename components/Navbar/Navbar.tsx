@@ -3,7 +3,6 @@ import Container from "@/components/ui/Container";
 import MainNav from "./MainNav";
 import Link from "next/link";
 import fetchCategories from "@/actions/fetchCategories";
-import { CategoryType } from "@/types";
 import NavAction from "./NavAction";
 
 const Navbar = async () => {

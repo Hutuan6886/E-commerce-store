@@ -8,7 +8,7 @@ import { ProductType } from "@/types";
 import React from "react";
 
 const page = async ({ params }: { params: { productId: string } }) => {
-  const product: ProductType = await fetchProduct(params.productId);
+  const product = await fetchProduct(params.productId);
   if (!product) {
     return null;
   }
