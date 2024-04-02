@@ -5,9 +5,6 @@ const fetchCategory = async (id: string): Promise<CategoryType> => {
     `${process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_API_URL}/categories/${id}`,
     { method: "GET", cache: "no-cache" }
   );
-  if (!res.ok) {
-    throw new Error(`HTTP error! Status: ${res.status}`);
-  }
   return res.json();
 };
 export default fetchCategory;

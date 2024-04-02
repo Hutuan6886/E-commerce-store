@@ -11,9 +11,6 @@ const fetchCategories = async (): Promise<CategoryType[]> => {
       cache: "no-cache", //* Mặc định sẽ của fetch là cache
     }
   );
-  if (!res.ok) {
-    throw new Error(`HTTP error! Status: ${res.status}`);
-  }
   return res.json();
 };
 export default fetchCategories;

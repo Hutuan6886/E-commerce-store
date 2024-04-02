@@ -8,9 +8,6 @@ const fetchBillboards = async (id: string): Promise<BillBoardType> => {
       cache: "no-cache",
     }
   );
-  if (!res.ok) {
-    throw new Error(`HTTP error! Status: ${res.status}`);
-  }
   return res.json();
 };
 export default fetchBillboards;

@@ -30,10 +30,6 @@ const fetchProducts = async (query: Query): Promise<ProductType[]> => {
     cache: "no-cache",
   });
 
-  if (!res.ok) {
-    throw new Error(`HTTP error! Status: ${res.status}`);
-  }
-
   return res.json();
 };
 

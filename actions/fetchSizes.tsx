@@ -8,9 +8,6 @@ const fetchSizes = async (): Promise<SizeType[]> => {
       cache: "no-cache",
     }
   );
-  if (!res.ok) {
-    throw new Error(`HTTP error! Status: ${res.status}`);
-  }
   return res.json();
 };
 

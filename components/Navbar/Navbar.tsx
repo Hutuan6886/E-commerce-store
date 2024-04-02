@@ -8,7 +8,7 @@ import NavAction from "./NavAction";
 
 const Navbar = async () => {
   //todo: Call api lấy dataCategories sử dụng để làm tiêu đề navbar
-  const dataNav: CategoryType[] = await fetchCategories();
+  const dataNav = await fetchCategories();
 
   return (
     <nav>
@@ -18,9 +18,7 @@ const Navbar = async () => {
             <p className="text-black font-bold text-md text-2xl">SHOPNAME</p>
           </Link>
           <MainNav dataRoutes={dataNav} />
-          <NavAction
-            className="ml-auto flex items-center"
-          />
+          <NavAction className="ml-auto flex items-center" />
         </div>
       </Container>
     </nav>
