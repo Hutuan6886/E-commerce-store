@@ -23,12 +23,16 @@ const fetchProducts = async (query: Query): Promise<ProductType[]> => {
       isArchived: query.isArchived,
     },
   });
-  
+
   // console.log("url", url);
   const res = await fetch(url, {
     method: "GET",
     cache: "no-cache",
   });
+
+  if (!res.ok) {
+    throw new Error(`HTTP error! Status: ${res.status}`);
+  }
 
   return res.json();
 };

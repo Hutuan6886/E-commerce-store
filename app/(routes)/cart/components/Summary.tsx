@@ -50,6 +50,7 @@ const Summary: React.FC<SummaryProps> = ({ cartArray }) => {
       <Currency price={totalPrice} />
       <Button
         className="w-full rounded-xl"
+        disabled = {cartArray.length===0 ? true : false}
         onClick={() => getPayStripe(cartArray)}
       >
         Thanh Toán

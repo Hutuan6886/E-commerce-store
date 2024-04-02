@@ -9,6 +9,7 @@ const Page = () => {
   //todo: Bởi vì giáo diện của cart page lấy giá trị từ state tại store cart để render, và sẽ re-render mỗi khi update giá trị, nên sẽ check hydration
   const [isMounted, setIsMounted] = useState(false);
   const storeCart = useStoreCart();
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
