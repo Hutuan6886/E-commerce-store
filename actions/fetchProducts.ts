@@ -26,6 +26,10 @@ const fetchProducts = async (query: Query): Promise<ProductType[]> => {
 
   // console.log("url", url);
   const res = await fetch(url, {
+    headers: {
+      accept: "application/json",
+      "User-agent": "learning app",
+    },
     method: "GET",
     cache: "no-cache",
   });
